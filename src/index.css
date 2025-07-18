@@ -60,11 +60,11 @@ body {
   }
 
   .main {
-    @apply w-[100%];
+    @apply w-full lg:w-1/2;
   }
 
   .app-header {
-    @apply w-[100%] mb-16 flex items-center justify-between;
+    @apply w-full lg:w-1/2 mb-16 flex items-center justify-between;
   }
 
   .error {
@@ -96,7 +96,7 @@ body {
   }
 
   .progress {
-    @apply mb-16 grid justify-between gap-[1.2rem] grid-cols-2 text-[1.8rem] text-[#ced4da];
+    @apply h-4 bg-[--color-theme] rounded-full transition-all duration-300;
   }
 
   .start {

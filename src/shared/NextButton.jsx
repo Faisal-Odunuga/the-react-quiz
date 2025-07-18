@@ -12,7 +12,6 @@ const NextButton = () => {
   } = useContext(AllContext);
 
   const percentage = (points / maxPossiblePoints) * 100;
-  console.log(points, maxPossiblePoints);
 
   if (answer === null) return null;
 
