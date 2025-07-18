@@ -1,5 +1,6 @@
 /* eslint-disable no-case-declarations */
 /* eslint-disable react-refresh/only-export-components */
+import axios from "axios";
 import React, { createContext, useReducer } from "react";
 export const AllContext = createContext();
 const GlobalProvider = ({ children }) => {
@@ -18,8 +19,12 @@ const GlobalProvider = ({ children }) => {
 
   const getQuestions = async () => {
     try {
-      const response = await fetch("http://localhost:3000/questions");
-      const data = await response.json();
+      const response = await axios(
+        "https://687ad45cabb83744b7edf4c2.mockapi.io/api/questions"
+      );
+      const data = await response.data;
+      console.log(data);
+
       dispatch({ type: "dataReceived", payload: data });
     } catch (error) {
       dispatch({ type: "dataFailed", payload: error });
